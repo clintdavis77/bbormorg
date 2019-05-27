@@ -138,9 +138,9 @@ googleAnalytics = ""
         text = "Get in touch"
         type = "primary"
 
-        [[params.landing.banner.button]]
-        url = "#feature-icons"
-        text = "Find out more"
+        # [[params.landing.banner.button]]
+        # url = "#feature-icons"
+        # text = "Find out more"
 
     #Details for the box below the banner
     [params.landing.services]
