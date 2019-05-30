@@ -1,7 +1,7 @@
 baseURL = "https://bborm.org/"
 languageCode = "en-us"
 title = "Bethel Baptist Church of Rocky Mount"
-theme = ['alpha-church']
+theme = "alpha-church"
 # themesDir = "../.."
 
 rssLimit = 5
@@ -84,7 +84,7 @@ googleAnalytics = ""
   title = "Bethel Baptist Church of Rocky Mount"
   subtitle = ""
   author = "Daniel Saunders"
-
+  languageCode = "en" #For Accessibility
   customCSS = ["example.css"]
 
   bible_popups = "faithlife" #faithlife, blb
@@ -127,81 +127,6 @@ googleAnalytics = ""
     confirm_page = "/contact-thanks"
     # formspree_email=""
 
-  #Paramaters for the home/landing page
-  [params.landing]
-
-    [params.landing.banner]
-      image = "img/banner.jpg"
-
-      [[params.landing.banner.button]]
-        url = "#call-to-action"
-        text = "Get in touch"
-        type = "primary"
-
-        # [[params.landing.banner.button]]
-        # url = "#feature-icons"
-        # text = "Find out more"
-
-    #Details for the box below the banner
-    [params.landing.services]
-      title = "Church on Sunday"
-      text = "We meet at 11 am at [160 Bethel Church Road, Luthersville GA 30251](https://www.openstreetmap.org/#map=18/33.17182/-84.68219)."
-      map_location = "Bethel Baptist Church of Rocky Mount"
-
-    [params.landing.feature_icons]
-      #These feature icons look best if there's an even number of them.
-      enable = false
-
-      #Accent is a colour defined in the CSS file. Choose between 1 and 5
-      [[params.landing.feature_icons.tile]]
-        icon = "fa-hands-helping"
-        icon_pack = "fas"
-        accent = "1"
-        title = "Serving"
-        text = "Serving our community and spreading the love of Christ."
-
-      [[params.landing.feature_icons.tile]]
-        icon = "fa-church"
-        icon_pack = "fas"
-        accent = "2"
-        title = "Meeting"
-        text = "Meeting together to hear and study the Word."
-
-      [[params.landing.feature_icons.tile]]
-        icon = "fa-comments"
-        icon_pack = "fas"
-        accent = "5"
-        title = "Speaking"
-        text = "Proclaiming the Word of God to the world."
-
-      [[params.landing.feature_icons.tile]]
-        icon = "fa-heartbeat"
-        icon_pack = "fas"
-        accent = "3"
-        title = "Loving"
-        text = "Loving God and loving our neighbors."
-
-    [params.landing.feature_images]
-      #These feature images look best if there's an even number of them.
-      enable = false
-
-      [[params.landing.feature_images.tile]]
-        image = "img/kids.jpg"
-        title = "Childrens' Ministry"
-        text = "A church for the family."
-        url = "/kids"
-        button_text = "Learn more"
-
-      [[params.landing.feature_images.tile]]
-        image = "img/midweek.jpg"
-        title = "Midweek Ministries"
-        text = "Want more during the week?"
-        url = "#"
-        button_text="Join a group today!"
-
-    [params.landing.CTA]
-      heading = "Get in touch!"
-      message = "We'd love to hear from you."
 
     [params.footer]
       copyright = [
