@@ -14,7 +14,7 @@
 #Details for the box below the banner
 [services]
   title = "Church on Sunday"
-  text = "We meet at 11 am at [160 Bethel Church Road, Luthersville GA 30251](https://www.google.com/maps/place/Bethel+Baptist+Church+of+Rocky+Mount/@33.1719423,-84.6848961,17z/data=!3m1!4b1!4m5!3m4!1s0x88f4bc87d367afd3:0x92d6bac1fa884ab2!8m2!3d33.1719423!4d-84.6827021)."
+  text = "We meet at 11 am at [160 Bethel Church Road, Luthersville GA 30251](https://www.openstreetmap.org/#map=18/33.17182/-84.68219)."
   map_location = "Bethel Baptist Church of Rocky Mount"
 
 [feature_icons]
