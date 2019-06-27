@@ -7,9 +7,10 @@
       text = "Get in touch"
       type = "primary"
 
-  #[[banner.button]]
-  #    url = "#feature-icons"
-  #    text = "Find out more"
+  [[banner.button]]
+      url = "https://tmab.cokesburyvbs.com/bborm"
+      text = "VBS Info and Registration"
+      type = "secondary"
 
 #Details for the box below the banner
 [services]

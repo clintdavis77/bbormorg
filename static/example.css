@@ -9,3 +9,7 @@
 a {
   color: #2176ff;
 }
+
+.button.secondary {
+  background-image: url("/img/vbs-background.png");
+}
