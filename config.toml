@@ -30,45 +30,45 @@ googleAnalytics = "UA-2326736-20"
   [[menu.main]]
     name = "Sermons"
     url = "https://anchor.fm/bborm"
-    weight = 1
+    weight = 10
 
   [[menu.main]]
     name = "Calendar"
     url = "/calendar"
-    weight = 2
+    weight = 20
 
   [[menu.main]]
     name = "Our Pastor"
     url = "/kenny-heinzel"
-    weight = 3
+    weight = 30
 
   [[menu.main]]
     name = "Contact"
     url = "/#call-to-action"
-    weight = 4
+    weight = 40
 
   [[menu.main]]
     name = "Resources"
     url = "#"
-    weight = 5
+    weight = 50
 
   [[menu.main]]
     name = "Beliefs"
     parent = "Resources"
     url = "/beliefs"
-    weight = 1
+    weight = 10
 
     [[menu.main]]
     name = "Church History"
     parent = "Resources"
     url = "/church-history"
-    weight = 2
+    weight = 20
 
-    # [[menu.main]]
-    # name = "Giving"
-    # parent = "Resources"
-    # url = "https://tithe.ly/give?c=758647"
-    # weight = 3
+    [[menu.main]]
+    name = "Giving"
+    parent = "Resources"
+    url = "https://tithe.ly/give?c=758647"
+    weight = 25
 
     # [[menu.main]]
     # name = "Leaders"
@@ -79,7 +79,7 @@ googleAnalytics = "UA-2326736-20"
     [[menu.main]]
     name = "Facebook"
     url = "https://www.facebook.com/BethelBaptistChurchOfRockyMount/"
-    weight = 6
+    weight = 60
 
 # Paramaters for the whole site
 [params]
