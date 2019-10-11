@@ -38,6 +38,11 @@ googleAnalytics = "UA-2326736-20"
     weight = 20
 
   [[menu.main]]
+    name = "Giving"
+    url = "https://tithe.ly/give?c=758647"
+    weight = 25
+    
+  [[menu.main]]
     name = "Our Pastor"
     url = "/kenny-heinzel"
     weight = 30
@@ -64,11 +69,7 @@ googleAnalytics = "UA-2326736-20"
     url = "/church-history"
     weight = 20
 
-    [[menu.main]]
-    name = "Giving"
-    parent = "Resources"
-    url = "https://tithe.ly/give?c=758647"
-    weight = 25
+
 
     # [[menu.main]]
     # name = "Leaders"
