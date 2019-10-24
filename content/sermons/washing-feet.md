@@ -7,14 +7,14 @@ passage: "John 13:1-17"
 preachers: "Dr. Ken Waldrup"
 images: ["/img/freely-20445.jpg"]
 tags: [
-        "blood",
-        "bride",
-        "christ",
+        "community",
+        "feet",
         "god",
         "jesus",
-        "lamb",
-        "passover",
-        "people"
+        "lord",
+        "people",
+        "thing",
+        "wash"
     ]
 anchorfm: "https://anchor.fm/bborm/episodes/Washing-Feet-e81aie"
 ---
