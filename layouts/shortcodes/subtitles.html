@@ -1,0 +1,69 @@
+<script>
+function setupSubtitles(jsonUrl){
+    
+    fetch(jsonUrl).then(r => r.json()).then(function(response){
+        var subtitles = document.getElementById("subtitles");
+        var syncData  = response;
+        console.log(syncData);
+        
+        var audioPlayer = document.getElementById("player");
+
+        function createSubtitle()
+            {
+                var element;
+                for (var i = 0; i < syncData.words.length; i++) {
+                    element = document.createElement('span');
+                    element.setAttribute("id", "c_" + i);
+                    element.innerText = syncData.words[i].text + " ";
+                    subtitles.appendChild(element);
+                }
+            }
+            createSubtitle();
+        
+        function highlightWord(){
+            //console.log("here");
+            //console.log((audioPlayer.currentTime * 1000));
+            //console.log(syncData.words[27].start);
+            
+            syncData.words.forEach(function(element, index){
+                subtitles.children[index].style.fontWeight = "";
+                if( (audioPlayer.currentTime * 1000) >= element.start && (audioPlayer.currentTime * 1000) <= element.end ) {
+					subtitles.children[index].style.fontWeight = "700";
+					//subtitles.children[index].scrollIntoView(false);
+				}
+					
+
+            });
+        }
+
+        // ES6 code
+function throttled(delay, fn) {
+    let lastCall = 0;
+    return function (...args) {
+      const now = (new Date).getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      return fn(...args);
+    }
+  }
+          //const myHander = (event) => {highlightWord();}
+          const tHandler = throttled(1000,highlightWord);
+
+            audioPlayer.addEventListener("timeupdate", tHandler);
+    });
+
+    
+            
+            
+        };
+
+	window.onload = setupSubtitles("{{.Get "jsonfile" }}");
+</script>
+
+<div class="row">
+		<div class="col-12 col-12-mobilep" id="subtitles">
+			
+		</div>
+	</div>
