@@ -14,6 +14,10 @@ function setupSubtitles(jsonUrl){
                 for (var i = 0; i < syncData.words.length; i++) {
                     element = document.createElement('span');
                     element.setAttribute("id", "c_" + i);
+                    element.setAttribute("title",syncData.words[i].confidence);
+                    if (syncData.words[i].confidence <=0.94){
+                        element.style.fontStyle = "italic";
+                    }
                     element.innerText = syncData.words[i].text + " ";
                     subtitles.appendChild(element);
                 }
