@@ -1,73 +1,88 @@
-<script>
-function setupSubtitles(jsonUrl){
+<div class="row">
+        <div class="col-12 col-12-mobilep" id="subtitles">
     
-    fetch(jsonUrl).then(r => r.json()).then(function(response){
-        var subtitles = document.getElementById("subtitles");
-        var syncData  = response;
-        console.log(syncData);
-        
+        </div>
+    </div>
+
+<script language="javascript" src="/js/lz-string.js"></script>
+<script>
+    var data = "{{.Get "data" }}";
+    var decompressed = LZString.decompressFromBase64(data);
+        var syncData = JSON.parse(decompressed);
         var audioPlayer = document.getElementById("player");
 
-        function createSubtitle()
-            {
-                var element;
-                for (var i = 0; i < syncData.words.length; i++) {
-                    element = document.createElement('span');
-                    element.setAttribute("id", "c_" + i);
-                    element.setAttribute("title",syncData.words[i].confidence);
-                    if (syncData.words[i].confidence <=0.94){
-                        element.style.fontStyle = "italic";
-                    }
-                    element.innerText = syncData.words[i].text + " ";
-                    subtitles.appendChild(element);
-                }
+
+    function highlightWord() {
+        //console.log("here");
+        //console.log((audioPlayer.currentTime * 1000));
+        //console.log(syncData.words[27].start);
+
+        syncData.words.forEach(function (element, index) {
+            subtitles.children[index].style.fontWeight = "";
+            if ((audioPlayer.currentTime * 1000) >= element.start && (audioPlayer.currentTime * 1000) <= element.end) {
+                subtitles.children[index].style.fontWeight = "700";
+                //subtitles.children[index].scrollIntoView(false);
             }
-            createSubtitle();
-        
-        function highlightWord(){
-            //console.log("here");
-            //console.log((audioPlayer.currentTime * 1000));
-            //console.log(syncData.words[27].start);
-            
-            syncData.words.forEach(function(element, index){
-                subtitles.children[index].style.fontWeight = "";
-                if( (audioPlayer.currentTime * 1000) >= element.start && (audioPlayer.currentTime * 1000) <= element.end ) {
-					subtitles.children[index].style.fontWeight = "700";
-					//subtitles.children[index].scrollIntoView(false);
-				}
-					
 
-            });
-        }
 
-        // ES6 code
-function throttled(delay, fn) {
-    let lastCall = 0;
-    return function (...args) {
-      const now = (new Date).getTime();
-      if (now - lastCall < delay) {
-        return;
-      }
-      lastCall = now;
-      return fn(...args);
+        });
     }
-  }
-          //const myHander = (event) => {highlightWord();}
-          const tHandler = throttled(1000,highlightWord);
 
-            audioPlayer.addEventListener("timeupdate", tHandler);
-    });
+    // ES6 code
+    function throttled(delay, fn) {
+        let lastCall = 0;
+        return function (...args) {
+            const now = (new Date).getTime();
+            if (now - lastCall < delay) {
+                return;
+            }
+            lastCall = now;
+            return fn(...args);
+        }
+    }
 
-    
-            
-            
-        };
+    function createSubtitle() {
+        var element;
+        var subtitles = document.getElementById("subtitles");
+        for (var i = 0; i < syncData.words.length; i++) {
+            element = document.createElement('span');
+            element.setAttribute("id", "c_" + i);
+            element.setAttribute("title", syncData.words[i].confidence);
+            if (syncData.words[i].confidence <= 0.94) {
+                element.style.fontStyle = "italic";
+            }
+            element.innerText = syncData.words[i].text + " ";
+            subtitles.appendChild(element);
+        }
+    }
 
-	window.onload = setupSubtitles("{{.Get "jsonfile" }}");
+    function setupSubtitles(date) {
+
+
+
+        
+        //console.log(data);
+        
+        //console.log(syncData);
+
+        
+
+        createSubtitle();
+
+
+
+
+        //const myHander = (event) => {highlightWord();}
+        const tHandler = throttled(250, highlightWord);
+
+        audioPlayer.addEventListener("timeupdate", tHandler);
+
+
+
+
+
+    };
+
+    setupSubtitles();
 </script>
 
-<div class="row">
-		<div class="col-12 col-12-mobilep" id="subtitles">
-			
-		</div>
-	</div>

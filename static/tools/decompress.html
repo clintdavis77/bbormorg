@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<script language="javascript" src="/js/lz-string.js"></script>
+<script>
+
+function convert()
+                {
+                  console.log("1");
+                    var rawText = document.getElementById("input").value;
+                    console.log("2");
+                    var decompressed = LZString.decompressFromBase64(rawText);
+                    console.log("3");
+                    document.getElementById("output").value = decompressed;
+                    console.log("4");
+                    // var result = document.getElementById("output");
+                    // for (var i = 0; i < syncData.words.length; i++) {
+                    //     element = document.createElement('span');
+                    //     element.setAttribute("id", "c_" + i);
+                    //     element.setAttribute("title",syncData.words[i].confidence);
+                    //     if (syncData.words[i].confidence <=0.94){
+                    //         element.style.fontStyle = "italic";
+                    //     }
+                    //     element.innerText = syncData.words[i].text + " ";
+                    //     result.appendChild(element);
+                        
+                    // }
+                    // document.getElementById("output").value = JSON.stringify(result);
+                }
+
+    
+    </script>
+</head>
+<body>
+
+<h2>Three Equal Columns</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <textarea id="input" cols="50" rows="100"></textarea>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <button id="convert" onclick="convert()">Convert</button>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+        <textarea id="output" cols="50" rows="100"></textarea>
+  </div>
+</div>
+
+</body>
+</html>
