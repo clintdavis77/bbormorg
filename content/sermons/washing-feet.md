@@ -1,5 +1,6 @@
 ---
 title: "Washing Feet"
+description: "test"
 date: 2019-10-20T11:00:00-04:00
 draft: false
 audio: "https://s3-us-west-2.amazonaws.com/anchor-audio-bank/production/2019-9-24/30524410-44100-1-91a638366e05e.MP3"
