@@ -1,14 +1,20 @@
-<div class="row">
-        <div class="col-12 col-12-mobilep" id="subtitles">
-    
+<div class="row" id="readbutton">
+        <div class="col-12 col-12-mobilep">
+                <a class="button alt small" onclick="setupSubtitles();"><i class="icon fas fa-glasses"></i>&nbsp;Read along with subtitles (experimental)</a>
         </div>
     </div>
+<div class="row" id="subrow" style="display: none;">
+    <div class="col-12 col-12-mobilep" id="subtitles">
+    </div>
+</div>
 
-<script language="javascript" src="/js/lz-string.js"></script>
 <script>
-    var data = "{{.Get "data" }}";
-    var decompressed = LZString.decompressFromBase64(data);
-        var syncData = JSON.parse(decompressed);
+
+    
+    var transcriptDate = "{{.Get "date" }}";
+    var theDate = transcriptDate.split("-");
+    var jsonUrl = "/transcript-data/" + theDate[0] + "/" + transcriptDate + ".json";
+        var syncData;
         var audioPlayer = document.getElementById("player");
 
 
@@ -42,22 +48,29 @@
     }
 
     function createSubtitle() {
-        var element;
-        var subtitles = document.getElementById("subtitles");
-        for (var i = 0; i < syncData.words.length; i++) {
-            element = document.createElement('span');
-            element.setAttribute("id", "c_" + i);
-            element.setAttribute("title", syncData.words[i].confidence);
-            if (syncData.words[i].confidence <= 0.94) {
-                element.style.fontStyle = "italic";
+        fetch(jsonUrl).then(r => r.json()).then(function(response){
+            syncData = response;
+            var element;
+            var subtitles = document.getElementById("subtitles");
+            for (var i = 0; i < syncData.words.length; i++) {
+                element = document.createElement('span');
+                element.setAttribute("id", "c_" + i);
+                element.setAttribute("title", syncData.words[i].confidence);
+                if (syncData.words[i].confidence <= 0.94) {
+                    element.style.fontStyle = "italic";
+                }
+                element.innerText = syncData.words[i].text + " ";
+                subtitles.appendChild(element);
             }
-            element.innerText = syncData.words[i].text + " ";
-            subtitles.appendChild(element);
-        }
+        });
     }
 
     function setupSubtitles(date) {
+        var readbutton = document.getElementById("readbutton");
+        readbutton.style.display = "none";
 
+        var subrow = document.getElementById("subrow");
+        subrow.style.display = "";
 
 
         
@@ -83,6 +96,6 @@
 
     };
 
-    setupSubtitles();
+    //setupSubtitles();
 </script>
 
