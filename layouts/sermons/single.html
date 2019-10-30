@@ -22,7 +22,15 @@
 								</div>
 								{{ end }} {{/* if .audio */}}
 						</div>
-						
+						<div class="row">
+							<div class="col-12 col-12-mobilep" style="text-align: center;">
+								{{ with .Params.audio }}
+								{{ $audio_name_arr := split . "." }}
+								{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
+								<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
+								{{ end }} {{/* if .audio */}}
+							</div>
+						</div>
 						<br />
 						
 						<div class="row">
@@ -49,7 +57,7 @@
 								</p>
 							{{ end }} {{/* end if series */}}
 							{{ if .Params.tags }}
-								<p>Topics:
+								<p>Tags:
 									{{ range $index, $key:= .Params.tags }}
 										{{ if $index }}, {{ end }}
 										{{ if gt (len $key) 0 }}
@@ -59,11 +67,7 @@
 								</p>
 							{{ end }} {{/* end if tags */}}
 
-							{{ with .Params.audio }}
-							{{ $audio_name_arr := split . "." }}
-							{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
-							<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
-							{{ end }} {{/* if .audio */}}
+							
 							</div>
 						</div>
 						{{ .Content }}

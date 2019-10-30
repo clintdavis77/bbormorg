@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ "<!-- Main -->" | safeHTML }}
+		<section id="main" class="container">
+			<header>
+				<h2>{{ .Title | title }}</h2>
+					<ul class="icons">
+						<li>
+							<a href="{{ .Site.Params.Podcast.anchorfm }}" target="_blank"><i class="icon fas fa-podcast"><span class="label">Subscribe on your favorite device at Anchor.FM</span></i> Subscribe on your favorite device at Anchor.FM</a>
+						</li>
+					</ul>
+			</header>
+			{{ partial "listbody" . }}
+	</section>
+{{ end }}
