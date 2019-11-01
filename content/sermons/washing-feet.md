@@ -1,6 +1,6 @@
 ---
 title: "Washing Feet"
-description: "test"
+description: "Jesus knew that the father had given everything into his hands and that he had come from the father and that he was going back to God...He poured water into a basin and began to wash his disciples feet and to drive them with a towel that he had tied around him, he came to Simon Peter and asked him.."
 summary: "Jesus knew that the father had given everything into his hands and that he had come from the father and that he was going back to God...He poured water into a basin and began to wash his disciples feet and to drive them with a towel that he had tied around him, he came to Simon Peter and asked him.."
 date: 2019-10-20T11:00:00-04:00
 draft: false
@@ -38,10 +38,11 @@ tags: [
             "pastor",
             "ministry",
             "gospel",
-            "teacher"
+            "teacher",
+            "2019",
+            "2019-10"
         ]
-anchorfm: "https://anchor.fm/bborm/episodes/Washing-Feet-e81aie"
 
 ---
-{{% subtitles date="2019-10-20"  %}}
+{{% transcript date="2019-10-20" %}}
 
