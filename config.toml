@@ -94,7 +94,7 @@ googleAnalytics = "UA-2326736-20"
   bible_popups = "faithlife" #faithlife, blb
   bible_version = "NKJV" #HCSB, NIV, NLT, ESV, etc.
   instant_page = false
-  enable_giving = false
+  enable_giving = true
   [params.podcast]
     title = "Listen to Alpha Church"
     subtitle = ""
