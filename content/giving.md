@@ -1,27 +1,45 @@
 ---
 title: "Giving"
-date: 2018-04-30T14:27:13+10:00
+subtitle: "Three ways to give"
+date: 2019-11-04T14:27:13+10:00
 draft: false
 ---
 
-We use Tithe.ly as our online giving platform. Tithe.ly uses the latest encryption and security methods to keep your transactions safe. There are transaction fees associated with using any online platform and we have listed theirs below. You will have the option to "cover the fees" to make sure 100% of your intended donation is received. One benefit is you can setup a recurring donation schedule if you like. If you have an questions, fill out the contact form and someone will get back with you shortly.
+<div class="row">
+	<div class="col-6 col-12-mobilep">
+        <span class="image fit"><img src="/img/computer.jpg" alt=""></span>
+    </div>
+    <div class="col-6 col-12-mobilep">
+        <h3>Online</h3>
+        <p>You can give securely online through our giving platform, Tithe.ly.</p>
+        <button class="tithely-give-btn" style="background-color: #00DB72;font-family: inherit;font-weight: bold;font-size: 19px; padding: 15px 70px; border-radius: 4px; cursor: pointer; background-image: none; color: white; text-shadow: none; display: inline-block; float: none; border: none;" data-church-id="758647">Give</button>
+        <script src="https://tithe.ly/widget/v3/give.js?3"></script>
+        <script>
+        var tw = create_tithely_widget();
+        </script>
+        <br /><br />
+        <p>Fees: 2.9% + 0.30 per transaction. ACH/Bank: 1% + 0.30 | AMEX: 3.5% + 0.30</p>
+    </div>
+</div>
 
-<section class="box special features">
-    <a href="https://tithe.ly/give?c=758647">
-        <div class="features-row">
-                <section>
-                    <span class="icon major fas fa-gift accent1"></span>
-                    <h3>Giving</h3>
-                    <p>Click here to go to our online giving platform.</p>
-                </section>
-        </div>
-    </a>
-</section>
+<div class="row">
+	<div class="col-6 col-12-mobilep">
+    <h3>In Person</h3>
+        <p>If you would like to donate by cash or check, you can give in person during our morning service. </p>
+            <br /><br />
+    </div>
+    <div class="col-6 col-12-mobilep"><span class="image fit"><img src="/img/church.jpg" alt=""></span></div>
+</div>
 
-## Fees
-These are the fees charged to us. For example, if you donated $20 by using a credit card the church would receive $19.12 ($0.58 + 0.30). If you donated $20 by using ACH (routing and account number) the church would receive $19.50 ($0.20 + 0.30).
-
-* 2.9% + 0.30 per transaction
-* ACH/Bank: 1% + 30¢
-* AMEX: 3.5% + 30¢
-
+<div class="row">
+	<div class="col-6 col-12-mobilep"><span class="image fit"><img src="/img/mail.jpg" alt=""></span></div>
+    <div class="col-6 col-12-mobilep">
+        <h3>Mail</h3>
+        <p>You can also donate by mail. You can mail checks to:</p>
+        <p>P.O. Box 755<br />
+        Luthersville GA 30251</p>
+        
+    </div>
+</div>
+<div style="text-align: center">
+<span style="text-align: center">Thank you for supporting the ministries of Bethel as we try to show God's love to the world.</span></div>

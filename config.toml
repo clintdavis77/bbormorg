@@ -66,11 +66,7 @@ googleAnalytics = "UA-2326736-20"
     url = "/church-history"
     weight = 2
 
-    # [[menu.main]]
-    # name = "Giving"
-    # parent = "Resources"
-    # url = "https://tithe.ly/give?c=758647"
-    # weight = 3
+    
 
     # [[menu.main]]
     # name = "Leaders"
@@ -83,6 +79,10 @@ googleAnalytics = "UA-2326736-20"
     url = "https://www.facebook.com/BethelBaptistChurchOfRockyMount/"
     weight = 6
 
+    [[menu.main]]
+    name = "Giving"
+    url = "/giving"
+    weight = 10
 # Paramaters for the whole site
 [params]
   title = "Bethel Baptist Church of Rocky Mount"
@@ -94,7 +94,7 @@ googleAnalytics = "UA-2326736-20"
   bible_popups = "faithlife" #faithlife, blb
   bible_version = "NKJV" #HCSB, NIV, NLT, ESV, etc.
   instant_page = false
-  enable_giving = false
+  enable_giving = true
   [params.podcast]
     title = "Listen to Alpha Church"
     subtitle = ""
