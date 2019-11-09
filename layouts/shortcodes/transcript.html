@@ -6,8 +6,10 @@
 <div class="row" id="subrow" style="display: none;">
     <div class="col-12 col-12-mobilep" id="transcript">
     </div>
+    <div id="fetch"></div>
 </div>
 
+<script src="/js/jszip.min.js"></script>
 <script>
     var transcriptDate = "{{.Get "date" }}";
     var theDate = transcriptDate.split("-");
@@ -39,7 +41,22 @@
     }
 
     function createTranscript() {
-        fetch(jsonUrl).then(r => r.json()).then(function(response){
+        fetch('/transcript-data/2019/2019-10-20.zip')       // 1) fetch the url
+        .then(function (response) {                       // 2) filter on 200 OK
+            if (response.status === 200 || response.status === 0) {
+                return Promise.resolve(response.blob());
+            } else {
+                return Promise.reject(new Error(response.statusText));
+            }
+        })
+        .then(JSZip.loadAsync)                            // 3) chain with the zip promise
+        .then(function (zip) {
+            return zip.file("2019-10-20.json").async("string"); // 4) chain with the text content promise
+        })
+        .then(function(content){
+            return JSON.parse(content);
+        })
+        .then(function success(response) {                    // 5) display the result
             syncData = response;
             var element;
             var transcript = document.getElementById("transcript");
@@ -53,7 +70,28 @@
                 element.innerText = syncData.words[i].text + " ";
                 transcript.appendChild(element);
             }
+        }, function error(e) {
+            $("#fetch").append($("<p>", {
+                "class": "alert alert-danger",
+                text: e
+            }));
         });
+
+        // fetch(jsonUrl).then(r => r.json()).then(function(response){
+        //     syncData = response;
+        //     var element;
+        //     var transcript = document.getElementById("transcript");
+        //     for (var i = 0; i < syncData.words.length; i++) {
+        //         element = document.createElement('span');
+        //         element.setAttribute("id", "c_" + i);
+        //         element.setAttribute("title", syncData.words[i].confidence);
+        //         if (syncData.words[i].confidence <= 0.94) {
+        //             element.style.fontStyle = "italic";
+        //         }
+        //         element.innerText = syncData.words[i].text + " ";
+        //         transcript.appendChild(element);
+        //     }
+        // });
     }
 
     function setupTranscript() {
@@ -70,6 +108,8 @@
         audioPlayer.addEventListener("timeupdate", tHandler);
         audioPlayer.play();
     };
+
+    
 
 </script>
 
