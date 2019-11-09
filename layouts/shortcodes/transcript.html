@@ -13,7 +13,7 @@
 <script>
     var transcriptDate = "{{.Get "date" }}";
     var theDate = transcriptDate.split("-");
-    var jsonUrl = "/transcript-data/" + theDate[0] + "/" + transcriptDate + ".json";
+    var jsonUrl = "/transcript-data/" + theDate[0] + "/" + transcriptDate + ".zip";
         var syncData;
         var audioPlayer = document.getElementById("player");
 
@@ -41,7 +41,7 @@
     }
 
     function createTranscript() {
-        fetch('/transcript-data/2019/2019-10-20.zip')       // 1) fetch the url
+        fetch(jsonUrl)       // 1) fetch the url
         .then(function (response) {                       // 2) filter on 200 OK
             if (response.status === 200 || response.status === 0) {
                 return Promise.resolve(response.blob());
@@ -51,7 +51,7 @@
         })
         .then(JSZip.loadAsync)                            // 3) chain with the zip promise
         .then(function (zip) {
-            return zip.file("2019-10-20.json").async("string"); // 4) chain with the text content promise
+            return zip.file(transcriptDate + ".json").async("string"); // 4) chain with the text content promise
         })
         .then(function(content){
             return JSON.parse(content);
