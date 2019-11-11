@@ -9,6 +9,6 @@ preachers: "Martin Luther"
 images: ["/img/freely-20445.jpg"]
 series: ["Test"]
 tags: ["bible","scripture", "historical"]
-draft: false
+draft: true
 ---
 Recording by Gillian Hedrie from [Librivox](https://librivox.org/selections-from-the-table-talk-of-martin-luther-by-martin-luther/)

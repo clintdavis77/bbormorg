@@ -1,21 +1,33 @@
+<style>
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+</style>
 {{ if ne .Params.share false}}
 <section class="share">
-  <h4>Share:</h4>
-  <a class="icon-twitter" href="https://twitter.com/share?text={{ .Title | safeHTML}}&nbsp;-&nbsp;{{ .Site.Title }}&amp;url={{ .Permalink }}"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-      <span class="hidden">Twitter</span>
-  </a>
-  <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
-      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-      <span class="hidden">Facebook</span>
-  </a>
-  <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url={{ .Permalink }}{{ if .Params.pinterestmedia }}&amp;media={{ .Params.pinterestmedia | relURL }}{{ end }}&amp;description={{ .Title | safeHTML}}"
-      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
-      <span class="hidden">Pinterest</span>
-  </a>
-  <a class="icon-google-plus" href="https://plus.google.com/share?url={{ .Permalink }}"
-     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-      <span class="hidden">Google+</span>
-  </a>
+    <ul class="share-buttons">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbborm.org&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/icons/Facebook.png" /></a></li>
+        <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fbborm.org&text=:%20http%3A%2F%2Fbborm.org" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/icons/Twitter.png" /></a></li>
+        <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fbborm.org&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"><img alt="Pin it" src="/img/icons/Pinterest.png" /></a></li>
+        <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fbborm.org&title=" target="_blank" title="Add to Pocket" onclick="window.open('https://getpocket.com/save?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Add to Pocket" src="/img/icons/Pocket.png" /></a></li>
+        <li><a href="http://wordpress.com/press-this.php?u=http%3A%2F%2Fbborm.org&quote=&s=" target="_blank" title="Publish on WordPress" onclick="window.open('http://wordpress.com/press-this.php?u=' + encodeURIComponent(document.URL) + '&quote=' +  encodeURIComponent(document.title)); return false;"><img alt="Publish on WordPress" src="/img/icons/Wordpress.png" /></a></li>
+        <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Fbborm.org" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/icons/Email.png" /></a></li>
+      </ul>
 </section>
 {{end}}
