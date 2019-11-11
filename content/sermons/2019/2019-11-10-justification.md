@@ -8,6 +8,7 @@ series: ["The Transformed Believer"]
 audio: "https://s3-us-west-2.amazonaws.com/anchor-audio-bank/production/2019-10-11/33658973-44100-1-6e3fb3f57a79.MP3"
 passage: "John 3:1-21"
 preachers: "Kenny Heinzel"
+notes: "2019/2019-11-10.pdf"
 images: ["/img/wash-hands.jpg"]
 tags: [
             "jesus",

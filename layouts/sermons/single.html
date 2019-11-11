@@ -56,6 +56,13 @@
 									{{ end }} {{/* range */}}
 								</p>
 							{{ end }} {{/* end if series */}}
+							{{ with .Params.notes }}
+
+								<p> Notes:
+										<a href="/sermon-notes/{{ . }}/">{{ . }}</a>
+								</p>
+							{{ end }} {{/* end if series */}}
+
 							{{ if .Params.tags }}
 								<p>Tags:
 									{{ range $index, $key:= .Params.tags }}
@@ -68,7 +75,7 @@
 							{{ end }} {{/* end if tags */}}
 
 							<p>
-								{{ partial "share.html" . }}
+								Sharing: {{ partial "share.html" . }}
 							</p>
 							</div>
 						</div>
