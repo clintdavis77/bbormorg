@@ -8,12 +8,15 @@
     </div>
 </div>
 
+<script src="/js/jszip.min.js"></script>
 <script>
+    // I realize this is very sloppy. Consider this an MVP rather than a polished finished product.
     var transcriptDate = "{{.Get "date" }}";
     var theDate = transcriptDate.split("-");
-    var jsonUrl = "/transcript-data/" + theDate[0] + "/" + transcriptDate + ".json";
+    var jsonUrl = "/transcript-data/" + theDate[0] + "/" + transcriptDate + ".zip";
         var syncData;
         var audioPlayer = document.getElementById("player");
+        var zipFile = new JSZip();
 
 
     function highlightWord() {
@@ -39,7 +42,33 @@
     }
 
     function createTranscript() {
-        fetch(jsonUrl).then(r => r.json()).then(function(response){
+        // fetch(jsonUrl).then(r => r.json()).then(function(response){
+        //     syncData = response;
+        //     var element;
+        //     var transcript = document.getElementById("transcript");
+        //     for (var i = 0; i < syncData.words.length; i++) {
+        //         element = document.createElement('span');
+        //         element.setAttribute("id", "c_" + i);
+        //         element.setAttribute("title", syncData.words[i].confidence);
+        //         if (syncData.words[i].confidence <= 0.94) {
+        //             element.style.fontStyle = "italic";
+        //         }
+        //         element.innerText = syncData.words[i].text + " ";
+        //         transcript.appendChild(element);
+        //     }
+        // });
+
+        fetch(jsonUrl)
+        .then(function (result){
+            console.log(result);
+            zipFile.loadAsync(result)
+;        })
+        .then(function (content){
+            console.log(content);
+            return zipFile.file("2019-10-20.json").async("String");
+        })
+        .then(function(response){
+            console.log(response);
             syncData = response;
             var element;
             var transcript = document.getElementById("transcript");
