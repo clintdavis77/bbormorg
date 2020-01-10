@@ -7,6 +7,11 @@
       text = "Get in touch"
       type = "primary"
 
+  [[banner.button]]
+      url = "https://www.youtube.com/watch?v=TLoxUTWP_Ik"
+      text = "View latest sermon on YouTube"
+      type = "secondary"
+
 #Details for the box below the banner
 [services]
   title = "Church on Sunday"

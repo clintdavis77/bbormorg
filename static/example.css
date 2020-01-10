@@ -10,8 +10,9 @@ a {
   color: #2176ff;
 }
 
-.button.secondary {
-  background-image: url("/img/vbs-background.png");
+a.button.secondary {
+  /*background-image: url("/img/vbs-background.png");*/
+  background-color: #f44336 !important;
 }
 
 /* Wobble Horizontal */
