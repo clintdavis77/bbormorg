@@ -11,10 +11,12 @@ enableEmoji = true
 
 customCSS = "example.css"
 
+# Enter your tracking code to enable Google Analytics
+GoogleAnalytics = "UA-2326736-20"
+
 [permalinks]
   sermons = "/sermons/:year/:month/:title/"
-# Enter your tracking code to enable Google Analytics
-googleAnalytics = "UA-2326736-20"
+
 
 [taxonomies]
   tag = "tags"
