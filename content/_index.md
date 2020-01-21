@@ -8,7 +8,7 @@
       type = "primary"
 
   [[banner.button]]
-      url = "https://www.youtube.com/watch?v=MviFWwT-FcQ"
+      url = "https://www.youtube.com/watch?v=c2w32gIC39U"
       text = "View latest sermon on YouTube"
       type = "secondary"
 
