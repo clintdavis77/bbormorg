@@ -8,8 +8,8 @@
       type = "primary"
 
   [[banner.button]]
-      url = "https://www.youtube.com/watch?v=c2w32gIC39U"
-      text = "View latest sermon on YouTube"
+      url = "/coronavirus"
+      text = "Coronavirus Updates"
       type = "secondary"
 
 #Details for the box below the banner
