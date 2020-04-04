@@ -52,6 +52,3 @@ The table and wooden water bucket with a glass dipper were used until 1931. It i
 On April 7, 1939 the first electric lighting was installed in the church building.
 
 The first Vacation Bible School was held in 1944.
-
-# Our Location
-{{< map >}}
