@@ -162,3 +162,15 @@ GoogleAnalytics = "UA-2326736-20"
     #   icon = "fa-rss"
     #   icon_pack = "fas"
     #   link = "/index.xml"
+
+[outputFormats]
+  [outputFormats.rokufeed]
+    mediaType = "application/json"
+    baseName = "rokufeed"
+    isPlanText = true
+    notAlternative = true
+
+[outputs]
+    #page = ["json","html"] # A player
+    section = ["rokufeed","html","rss"] # All players
+    #home = ["json"] # Everything

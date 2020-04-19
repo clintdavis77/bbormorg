@@ -8,6 +8,9 @@ draft: false
 
 ## Coronavirus Update
 
+### April 18, 2020
+Due to the extension of the governor's order to shelter in place, all in person activities are suspended until May 1. We have been posting content on our Facebook page. If you have any questions use the contact form on the site or contact your deacons.
+
 ### April 4, 2020
 Hi Church!
 

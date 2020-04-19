@@ -12,6 +12,11 @@
       text = "Coronavirus Updates"
       type = "secondary"
 
+  [[banner.button]]
+      url = "/sermons/2020/04/no-control-of-the-storm/"
+      text = "Latest Sermon"
+      type = "primary"
+
 #Details for the box below the banner
 [services]
   title = "Church on Sunday"

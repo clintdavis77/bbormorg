@@ -1,0 +1,47 @@
+{
+    "providerName": "Bethel Baptist Church of Rocky Mount",
+    "language": "en-us",
+    "lastUpdated": "{{now.Format "2006-01-02"}}T{{now.Format "15:04:05"}}",
+    "movies": [
+        {{ .Scratch.Add "secondLoop" "aaaaa" }}
+        {{- range $index, $element := (where .Site.Pages "Section" "sermons") -}}
+        {{ if (eq ($.Scratch.Get "secondLoop") "bbbbb") }}
+            ,
+        {{ end }}
+        {
+            "id": "{{sha256 .Plain}}",
+            "title": "Ready for Battle",
+            "shortDescription": "Pastor Kenny talks about the armor of God in Ephesions 6.",
+            "longDescription": "Pastor Kenny talks about the armor of God in Ephesions 6:18-20.",
+            "thumbnail": "https://f000.backblazeb2.com/file/bbormorg/sermons/2020/2020-03-01-thumb.jpg",
+            "genres": ["faith"],
+            "tags": ["2020","sermon"],
+            "releaseDate": "2020-03-01",
+            "rating": {
+                "rating": "UNRATED",
+                "ratingSource": "USA_PR"
+            },
+            "content": {
+                "dateAdded": "2019-10-31T14:14:54.431Z",
+                "captions": [{
+                    "url": "https://f000.backblazeb2.com/file/bbormorg/sermons/2020/2020-03-01.srt",
+                    "language": "en",
+                    "captionType": "SUBTITLE"
+                  }],
+                "duration": 2843,
+                "language": "en",
+                "trickPlayFiles": [],
+                "videos": [{
+                    "url": "https://f000.backblazeb2.com/file/bbormorg/sermons/2020/2020-03-01.mp4",
+                    "quality": "HD",
+                    "videoType": "MP4",
+                    "bitrate": 3000
+                }]
+            }
+        }
+        {{ $.Scratch.Set "secondLoop" "bbbbb" }}
+        {{ end }}
+            ]
+        }
+    }
+}
