@@ -1,18 +1,18 @@
 +++
-[banner]
+[Banner]
   image = "img/banner.jpg"
 
-  [[banner.button]]
+  [[Banner.button]]
       url = "/#call-to-action"
       text = "Get in touch"
       type = "primary"
 
-  [[banner.button]]
+  [[Banner.button]]
       url = "/coronavirus"
       text = "Coronavirus Updates"
       type = "secondary"
 
-  [[banner.button]]
+  [[Banner.button]]
       url = "/sermons/2020/04/no-control-of-the-storm/"
       text = "Latest Sermon"
       type = "primary"
