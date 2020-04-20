@@ -1,6 +1,6 @@
 +++
 [banner]
-  image = "/img/banner.jpg"
+  image = "img/banner.jpg"
 
   [[banner.button]]
       url = "/#call-to-action"
