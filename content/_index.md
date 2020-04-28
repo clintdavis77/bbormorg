@@ -13,7 +13,7 @@
       type = "secondary"
 
   [[Banner.button]]
-      url = "/sermons/2020/04/no-control-of-the-storm/"
+      url = "https://www.facebook.com/BethelBaptistChurchOfRockyMount/videos/538546813703275/"
       text = "Latest Sermon"
       type = "primary"
 
