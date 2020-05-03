@@ -174,3 +174,6 @@ GoogleAnalytics = "UA-2326736-20"
     #page = ["json","html"] # A player
     section = ["rokufeed","html","rss"] # All players
     #home = ["json"] # Everything
+
+[markup.goldmark.renderer]
+  unsafe= true

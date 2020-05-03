@@ -39,7 +39,6 @@ draft: false
         <p>P.O. Box 755<br />
         Luthersville GA 30251</p>
         
-    </div>
 </div>
 <div style="text-align: center">
 <span style="text-align: center">Thank you for supporting the ministries of Bethel as we try to show God's love to the world.</span></div>
