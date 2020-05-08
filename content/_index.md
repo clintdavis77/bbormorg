@@ -13,8 +13,8 @@
       type = "secondary"
 
   [[Banner.button]]
-      url = "https://www.facebook.com/BethelBaptistChurchOfRockyMount/videos/538546813703275/"
-      text = "Latest Sermon"
+      url = "https://www.facebook.com/watch/BethelBaptistChurchOfRockyMount/818925275252599/"
+      text = "Latest Sermons"
       type = "primary"
 
 #Details for the box below the banner
