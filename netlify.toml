@@ -11,4 +11,4 @@
   [[plugins]]
   package = netlify-plugin-algolia-index
     [plugins.inputs]
-      exclude = ['/admin', '/404.html', '/calendar', '/building-fund', '/posts', '/roku', '/tools']
+      exclude = ['/admin', '/404.html', '/calendar', '/building-fund', '/posts', '/roku', '/tools', '/tags', '/series']
