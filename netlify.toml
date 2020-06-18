@@ -9,6 +9,6 @@
   to = "http://rightnow.org/Account/Invite/bborm"
 
   [[plugins]]
-  package = netlify-plugin-algolia-index
+  package = "netlify-plugin-algolia-index"
     [plugins.inputs]
       exclude = ['/admin', '/404.html', '/calendar', '/building-fund', '/posts', '/roku', '/tools', '/tags', '/series']
