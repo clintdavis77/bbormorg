@@ -7,3 +7,8 @@
   [[redirects]]
   from = "/rightnow"
   to = "http://rightnow.org/Account/Invite/bborm"
+
+  [[plugins]]
+  package = "netlify-plugin-algolia-index"
+    [plugins.inputs]
+      exclude = ['/admin', '/404.html', '/calendar', '/building-fund', '/posts', '/roku', '/tools', '/tags', '/series', '/googledb52351f8e4eb04e.html','/preachers']
