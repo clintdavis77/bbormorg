@@ -10,12 +10,12 @@
   [[Banner.button]]
       url = "/coronavirus"
       text = "Coronavirus Updates"
-      type = "secondary"
+      type = "primary"
 
   [[Banner.button]]
-      url = "https://www.facebook.com/watch/BethelBaptistChurchOfRockyMount/818925275252599/"
-      text = "Latest Sermons"
-      type = "primary"
+      url = "/vbs"
+      text = "Vacation Bible School"
+      type = "secondary hvr-wobble-horizontal"
 
 #Details for the box below the banner
 [services]
