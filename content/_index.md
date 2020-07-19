@@ -13,8 +13,8 @@
       type = "primary"
 
   [[Banner.button]]
-      url = "/vbs-day-1"
-      text = "VBS Day 1"
+      url = "/vbs-day-3"
+      text = "VBS Day 3"
       type = "secondary hvr-wobble-horizontal"
 
 #Details for the box below the banner
