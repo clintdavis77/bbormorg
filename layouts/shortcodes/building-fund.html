@@ -7,29 +7,76 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script lang="text/javascript">
 var moneyRaised = {{.Get "moneyRaised" }};
-var costPerSquareFoot = 31.918022;
+var costPerSquareFoot = 118.7755;
 var squareFeetPaidFor = Math.floor(moneyRaised / costPerSquareFoot);
 
 function gridData() {
 	var data = new Array();
 	var xpos = 1; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
 	var ypos = 1;
-	var width = 9;
-	var height = 9;
+	var width = 10;
+	var height = 10;
     var click = 0;
     var fillColor = "#ffffff";
     
     // iterate for rows	
-	for (var column = 0; column < 130; column++) {
+	for (var column = 0; column < 70; column++) {
 		data.push( new Array() );
 
 		// iterate for cells/columns inside rows
-		for (var row = 0; row < 70; row++) {
+		for (var row = 0; row < 35; row++) {
             if (squareFeetPaidFor >= 0) {
                 fillColor = "#25ba43";
             } else {
                 fillColor = "#ffffff"
             }
+			
+			// format walls
+			// if (column == 50 && row > 40){
+			// 	fillColor = "#000000";
+			// }
+			// if (column == 50 && row < 30){
+			// 	fillColor = "#000000";
+			// }
+
+			// if (row == 15 && column < 18){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 30 && column < 18){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 40 && column < 18){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 55 && column < 18){
+			// 	fillColor = "#000000";
+			// }
+			// if (column == 18 && row < 31){
+			// 	fillColor = "#000000";
+			// }
+			// if (column == 18 && row > 39){
+			// 	fillColor = "#000000";
+			// }
+
+			// if (row == 15 && column > 32 && column < 50){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 30 && column > 32 && column < 51){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 40 && column > 32 && column < 51){
+			// 	fillColor = "#000000";
+			// }
+			// if (row == 55 && column > 32 && column < 50){
+			// 	fillColor = "#000000";
+			// }
+			// if (column == 32 && row < 31){
+			// 	fillColor = "#000000";
+			// }
+			// if (column == 32 && row > 39){
+			// 	fillColor = "#000000";
+			// }
+
 
 			data[column].push({
 				x: xpos,
@@ -57,8 +104,8 @@ var gridData = gridData();
 
 var grid = d3.select("#grid")
 	.append("svg")
-	.attr("width","1181px")
-	.attr("height","641px");
+	.attr("width","1200px")
+	.attr("height","700px");
 	
 var row = grid.selectAll(".row")
 	.data(gridData)
@@ -75,7 +122,7 @@ var column = row.selectAll(".square")
 	.attr("height", function(d) { return d.height; })
 	.style("fill", function(d) { return d.fillColor; })
     .style("stroke", "#777")
-    .style("opacity", 0.5)
+    .style("opacity", 0.7)
 	.on('click', function(d) {
     //    d.click ++;
     //    if ((d.click)%4 == 0 ) { d3.select(this).style("fill","#fff"); }
